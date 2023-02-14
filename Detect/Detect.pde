@@ -68,11 +68,35 @@ int getIndexFromXY(int x, int y, PImage img) {
 
 PImage highlightRed(PImage img) {
   PImage newImg = new PImage(img.width, img.height);
+  for (int p=0; p<newImg.pixels.length; p++) {
+    color c = img.pixels[p];
+    float red_percentage = red(c) / (red(c) + green(c) + blue(c));
+    if (red_percentage > .4) {
+      newImg.pixels[p] = color((1-red_percentage)*255, 0, 0);
+    }
+    else {
+      newImg.pixels[p] = color(calculateGray(c));
+    }
+  }
+  newImg.updatePixels();
   return newImg;
 }//higlightRed
 
 
 
 void dots(PImage img, int resolution) {
-
+  for (int i=0; i<img.width; i+=resolution) {
+    for (int j=0; j<img.height; j+=resolution) {
+      int p_index = j*img.width + i;
+      color c = img.pixels[p_index];
+      float red_percentage = red(c) / (red(c) + green(c) + blue(c));
+      if (red_percentage < .33) {
+        fill(color(0, 0, 255));
+      }
+      else {
+        fill(color(255, 0 ,0));
+      }
+      circle(i, j, resolution/2);
+    }
+  }
 }//dots
