@@ -1,8 +1,7 @@
 # ClassWork 00 For NeXT CS
-### Class Period:
-### Name0: YOUR NAME HERE
-### Name1: TABLE_BUDDY NAME HERE
-### Name2: TABLE_BUDY+ NAME HERE (if applicable, delete this line if not)
+### Class Period: 4
+### Name0: Branton Ling
+### Name1: Qing Yi Chen
 ---
 
 This is a map of average US temperatures from 1991-2020 [source](https://www.climate.gov/sites/default/files/2021-10/Normals_TotalPrecipAvgTemp_Annual_1991-2020_continuous_1400x2193.png)
@@ -25,27 +24,27 @@ Based on the images above, answer the following questions.
 #### Question 0
 What parts of the original map are being highlighted by the edge detection algorithm?
 
-YOUR ANSWER HERE (delete this line)
+The borders of the states and the names of the states.
 
 #### Question 1
 What information that was part of the original image has been lost via edge detection?
 
-YOUR ANSWER HERE (delete this line)
+Colors and some of the borders that blend in with the colors of the states.
 
 #### Question 2
 What information is present in the grascale version that is not in the edge detected version?
 
-YOUR ANSWER HERE (delete this line)
+The color gradient is more obvious and none of the names of the states are lost.
 
 #### Question 3
 What information that was part of the original image has been lost via grayscale conversion?
 
-YOUR ANSWER HERE (delete this line)
+The colors.
 
 #### Question 4
 In a temperature map, it is often useful to highlight particular temperature ranges. If you wanted to focus on higher temperatures, you might want to find a way to programatically highlight regions that are more red than others. Come up with an algorithm that would process the image such that the red regions are more prominent.
 
-YOUR ANSWER HERE (delete this line)
+For each pixel, you could calculate the percentage of red that makes up each RGB value and use that to determine a color value (255 * (1-red_percentage), 0, 0);
 
 ---
 
